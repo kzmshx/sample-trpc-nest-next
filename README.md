@@ -107,3 +107,17 @@ Create a new NestJS app.
 ```shell
 nest new apps/api --strict --skip-git --package-manager pnpm
 ```
+
+Install tRPC server.
+
+```shell
+pnpm i @trpc/server zod --filter=apps/api
+```
+
+Create NestJS tRPC module.
+
+```shell
+cd apps/api
+nest g module trpc
+nest g service trpc
+```
