@@ -84,25 +84,25 @@ Learn more about the power of Turborepo:
 
 ## Environment setup
 
-Install pnpm
+Install pnpm.
 
 ```shell
 npm i -g pnpm@latest
 ```
 
-Create a new repo
+Create a new repo.
 
 ```shell
 pnpm dlx create-turbo@latest
 ```
 
-Install NestJS CLI
+Install NestJS CLI.
 
 ```shell
 pnpm i -g @nestjs/cli
 ```
 
-Create a new NestJS app
+Create a new NestJS app.
 
 ```shell
 nest new apps/api --strict --skip-git --package-manager pnpm
