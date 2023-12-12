@@ -3,6 +3,7 @@ import { Card } from "@repo/ui/card";
 import { Code } from "@repo/ui/code";
 import styles from "./page.module.css";
 import { Button } from "@repo/ui/button";
+import { trpc } from "@web/app/trpc";
 
 function Gradient({
   conic,
@@ -51,7 +52,9 @@ const LINKS = [
   },
 ];
 
-export default function Page(): JSX.Element {
+export default async function Page(): Promise<JSX.Element> {
+  const { greeting } = await trpc.hello.query({ name: "Kazumasa Hirata" });
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -139,6 +142,8 @@ export default function Page(): JSX.Element {
           </Card>
         ))}
       </div>
+
+      <div>{greeting}</div>
     </main>
   );
 }

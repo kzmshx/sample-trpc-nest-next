@@ -1,9 +1,3 @@
 {
-  "extends": "@repo/typescript-config/base.json",
-  "compilerOptions": {
-    "paths": {
-      "@api/*": ["./apps/api/*"],
-      "@web/*": ["./apps/web/*"]
-    }
-  }
+  "extends": "@repo/typescript-config/base.json"
 }
