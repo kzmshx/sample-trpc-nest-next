@@ -121,3 +121,9 @@ cd apps/api
 nest g module trpc
 nest g service trpc
 ```
+
+Install tRPC into client.
+
+```shell
+pnpm i @trpc/client @trpc/server --filter=web
+```
