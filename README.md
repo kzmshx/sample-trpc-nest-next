@@ -111,7 +111,7 @@ nest new apps/api --strict --skip-git --package-manager pnpm
 Install tRPC server.
 
 ```shell
-pnpm i @trpc/server zod --filter=apps/api
+pnpm i @trpc/server zod --filter=api
 ```
 
 Create NestJS tRPC module.
