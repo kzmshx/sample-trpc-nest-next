@@ -95,3 +95,15 @@ Create a new repo
 ```shell
 pnpm dlx create-turbo@latest
 ```
+
+Install NestJS CLI
+
+```shell
+pnpm i -g @nestjs/cli
+```
+
+Create a new NestJS app
+
+```shell
+nest new apps/api --strict --skip-git --package-manager pnpm
+```
