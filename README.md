@@ -79,3 +79,19 @@ Learn more about the power of Turborepo:
 - [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
 - [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+
+# Memo
+
+## Environment setup
+
+Install pnpm
+
+```shell
+npm i -g pnpm@latest
+```
+
+Create a new repo
+
+```shell
+pnpm dlx create-turbo@latest
+```
