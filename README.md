@@ -40,8 +40,8 @@ Create NestJS tRPC module.
 
 ```shell
 cd apps/api
-nest g module trpc
-nest g service trpc
+nest generate module trpc
+nest generate service trpc
 ```
 
 Install tRPC into client.
@@ -49,6 +49,11 @@ Install tRPC into client.
 ```shell
 pnpm i @trpc/client @trpc/server --filter=web
 ```
+
+#### References
+
+- [Ultimate Guide: NextJS, NestJS & TRPC Monorepo [Updated 2023]](https://www.tomray.dev/nestjs-nextjs-trpc)
+  - How to setup tRPC in NestJS
 
 ### Migrate to fastify
 
@@ -78,9 +83,14 @@ apps/api/src/main.ts
 
 ![](docs/assets/migrate_express_to_fastify_main.png)
 
-# References
+#### References
 
-- [Ultimate Guide: NextJS, NestJS & TRPC Monorepo [Updated 2023]](https://www.tomray.dev/nestjs-nextjs-trpc)
+- [Performance (Fastify) | NestJS](https://docs.nestjs.com/techniques/performance)
+  - How to use fastify in NestJS
+- [Cookies | NestJS](https://docs.nestjs.com/techniques/cookies)
+  - How to register fastify plugins in NestJS
+- [Fastify Adapter | tRPC](https://trpc.io/docs/server/adapters/fastify)
+  - How to use tRPC fastify adapter
 
 ---
 
