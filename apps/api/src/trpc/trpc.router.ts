@@ -1,7 +1,16 @@
-import { INestApplication, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { TrpcService } from './trpc.service';
 import { z } from 'zod';
-import * as trpcExpress from '@trpc/server/adapters/express';
+import {
+  CreateFastifyContextOptions,
+  fastifyTRPCPlugin,
+} from '@trpc/server/adapters/fastify';
+import { NestFastifyApplication } from '@nestjs/platform-fastify';
+
+function createContext({ req, res }: CreateFastifyContextOptions) {
+  const user = { name: req.headers.username ?? 'anonymous' };
+  return { req, res, user };
+}
 
 @Injectable()
 export class TrpcRouter {
@@ -29,11 +38,14 @@ export class TrpcRouter {
 
   constructor(private readonly trpc: TrpcService) {}
 
-  async applyMiddleware(app: INestApplication) {
-    app.use(
-      '/trpc',
-      trpcExpress.createExpressMiddleware({ router: this.appRouter }),
-    );
+  async applyMiddleware(app: NestFastifyApplication) {
+    await app.register(fastifyTRPCPlugin, {
+      prefix: '/trpc',
+      trpcOptions: {
+        router: this.appRouter,
+        createContext,
+      },
+    });
   }
 }
 

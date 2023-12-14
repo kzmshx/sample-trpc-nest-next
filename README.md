@@ -2,6 +2,8 @@
 
 ## Environment setup
 
+### Start NestJS app
+
 Install pnpm.
 
 ```shell
@@ -26,6 +28,8 @@ Create a new NestJS app.
 nest new apps/api --strict --skip-git --package-manager pnpm
 ```
 
+### Setup tRPC
+
 Install tRPC server.
 
 ```shell
@@ -45,6 +49,34 @@ Install tRPC into client.
 ```shell
 pnpm i @trpc/client @trpc/server --filter=web
 ```
+
+### Migrate to fastify
+
+Remove express.
+
+```shell
+pnpm remove @nestjs/platform-express @types/express --filter=api
+```
+
+Install fastify.
+
+```shell
+pnpm i fastify @nestjs/platform-fastify --filter=api
+```
+
+Install tRPC fastify adapter.
+
+```shell
+pnpm i @trpc/server zod fastify --filter=api
+```
+
+apps/api/src/trpc/trpc.router.ts
+
+![](docs/assets/migrate_express_to_fastify_router.png)
+
+apps/api/src/main.ts
+
+![](docs/assets/migrate_express_to_fastify_main.png)
 
 # References
 
