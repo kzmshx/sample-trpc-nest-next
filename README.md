@@ -1,4 +1,62 @@
+# Memo
+
+## Environment setup
+
+Install pnpm.
+
+```shell
+npm i -g pnpm@latest
+```
+
+Create a new repo.
+
+```shell
+pnpm dlx create-turbo@latest
+```
+
+Install NestJS CLI.
+
+```shell
+pnpm i -g @nestjs/cli
+```
+
+Create a new NestJS app.
+
+```shell
+nest new apps/api --strict --skip-git --package-manager pnpm
+```
+
+Install tRPC server.
+
+```shell
+pnpm i @trpc/server zod --filter=api
+```
+
+Create NestJS tRPC module.
+
+```shell
+cd apps/api
+nest g module trpc
+nest g service trpc
+```
+
+Install tRPC into client.
+
+```shell
+pnpm i @trpc/client @trpc/server --filter=web
+```
+
+# References
+
+- [Ultimate Guide: NextJS, NestJS & TRPC Monorepo [Updated 2023]](https://www.tomray.dev/nestjs-nextjs-trpc)
+
+---
+
 # Turborepo starter
+
+<details>
+<summary>contents</summary>
+<div>
 
 This is an official starter Turborepo.
 
@@ -80,50 +138,5 @@ Learn more about the power of Turborepo:
 - [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 
-# Memo
-
-## Environment setup
-
-Install pnpm.
-
-```shell
-npm i -g pnpm@latest
-```
-
-Create a new repo.
-
-```shell
-pnpm dlx create-turbo@latest
-```
-
-Install NestJS CLI.
-
-```shell
-pnpm i -g @nestjs/cli
-```
-
-Create a new NestJS app.
-
-```shell
-nest new apps/api --strict --skip-git --package-manager pnpm
-```
-
-Install tRPC server.
-
-```shell
-pnpm i @trpc/server zod --filter=api
-```
-
-Create NestJS tRPC module.
-
-```shell
-cd apps/api
-nest g module trpc
-nest g service trpc
-```
-
-Install tRPC into client.
-
-```shell
-pnpm i @trpc/client @trpc/server --filter=web
-```
+</div>
+</details>
